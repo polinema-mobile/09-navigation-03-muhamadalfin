@@ -109,10 +109,31 @@
 			app:layout_constraintStart_toStartOf="parent" />
 
 		<TextView
+			android:id="@+id/text_away_scorerr"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginBottom="8dp"
+			android:text="@{String.valueOf(awayGoalScorerList.size())}"
+			app:layout_constraintBottom_toTopOf="@+id/button_add_away"
+			app:layout_constraintEnd_toEndOf="parent"
+			app:layout_constraintStart_toStartOf="parent" />
+
+		<TextView
+			android:id="@+id/text_home_scorerr"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginBottom="8dp"
+			android:text="@{fragment.home}"
+			app:layout_constraintBottom_toTopOf="@+id/button_add_home"
+			app:layout_constraintEnd_toEndOf="parent"
+			app:layout_constraintStart_toStartOf="parent" />
+
+		<TextView
 			android:id="@+id/text_away_scorer"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
 			android:layout_marginBottom="8dp"
+			android:text="@{fragment.away}"
 			app:layout_constraintBottom_toTopOf="@+id/button_add_away"
 			app:layout_constraintEnd_toEndOf="parent"
 			app:layout_constraintStart_toStartOf="parent" />

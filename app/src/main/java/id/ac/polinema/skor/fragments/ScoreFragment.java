@@ -57,7 +57,37 @@ public class ScoreFragment extends Fragment {
 			}
 		});
 
+		getParentFragmentManager().setFragmentResultListener(AWAY_REQUEST_KEY, this, new FragmentResultListener() {
+			@Override
+			public void onFragmentResult(@NonNull String requestKey, @NonNull Bundle result) {
+				GoalScorer goalScorer = result.getParcelable(SCORER_KEY);
+				awayGoalScorerList.add(goalScorer);
+			}
+		});
+
 		return binding.getRoot();
+	}
+
+	public String home(){
+		StringBuilder builder = new StringBuilder();
+		for (GoalScorer goalScorer : homeGoalScorerList){
+			builder.append(goalScorer.getName())
+					.append(" ")
+					.append(goalScorer.getMinute())
+					.append("\" ");
+		}
+		return builder.toString();
+	}
+
+	public String away(){
+		StringBuilder builder = new StringBuilder();
+		for (GoalScorer goalScorer : awayGoalScorerList){
+			builder.append(goalScorer.getName())
+					.append(" ")
+					.append(goalScorer.getMinute())
+					.append("\" ");
+		}
+		return builder.toString();
 	}
 
 	public void onAddHomeClick(View view) {
